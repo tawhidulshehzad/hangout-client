@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Home Made Beef ",
+    "img": "https://images.unsplash.com/photo-1605851868183-7a4de52117fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb2R8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "price": "20.00",
+    "description": "Everyday Bangladeshi food. Plain rice is the main food in Bangladesh. It is served with different fish and meat curry, Bhorta (mash) of different vegetables and fish, bhaji (fried) of different vegetables, and Patla Daal (lentil soup). A positive word about our traditional cuisine is that it is not only tasty, but healthy as well. Be it the fish, or the way rice is traditionally cooked, or the numerous vegetable dishes in the Bengali menu, or the proteins from lentil soup or meat - it is of no doubt that the food of this land is very nutritious."
+  },
+  {
+    "title": "Home Made cake",
+    "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Zm9vZHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60",
+    "price": "20.00",
+    "description": "daily fare from Bangladesh. Bangladesh's staple cuisine is plain rice. It is served with Patla Daal, Bhorta (mash) of various vegetables and fish, Bhaji (fried) of various vegetables, and different fish and meat curries (lentil soup). A good thing to say about our traditional food is that it is not only delicious but also nutritious. There is no denying that the food of this region is incredibly nutrient-dense, whether it be the fish, the traditional rice preparation, the several vegetable dishes on the Bengali menu, the proteins found in lentil soup or the meat."
+  },
+  {
+    "title": "Full chicken",
+    "img": "https://plus.unsplash.com/premium_photo-1663855531953-177d9754f1e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Zm9vZHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60",
+    "price": "200.00",
+    "description": "Typical Bangladeshi fare. The staple cuisine in Bangladesh is plain rice. It comes with various fish and meat curries, bhorta (mashed) vegetables and fish, bhaji (fried) vegetables, and patla daal (lentil soup). Our traditional cuisine has the advantage of being both delicious and nutritious. There is no doubt that the food of this region is incredibly nourishing, whether it be the fish, the traditional method that rice is prepared, the variety of vegetable dishes on the Bengali menu, the proteins found in lentil soup or meat."
+  },
+  {
+    "title": "Fried Rice",
+    "img": "https://plus.unsplash.com/premium_photo-1663840344687-a91e96693fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZvb2R8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "price": "150.00",
+    "description": "typical Bangladeshi cuisine. In Bangladesh, white rice is the primary cuisine. It is accompanied by various fish and meat curries, bhaji (fried) veggies, and patla daal. Bhorta (mash) is often served (lentil soup). Our traditional food is not only delicious but also healthful, which is a good thing. There is no doubt that the food of this region is incredibly nutrient-dense, whether it be the fish, the traditional rice preparation, the variety of vegetable dishes on the Bengali menu, the proteins found in lentil soup or meat."
+  },
+  {
+    "title": "Biriyani",
+    "img": "https://images.unsplash.com/photo-1625772415023-66f9b62a12b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFuZ2xhZGVzaGklMjBmb29kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "price": "30.00",
+    "description": "Everyday Bangladeshi cuisine. Bangladesh's staple cuisine is plain rice. It is served with various fish and meat curries, bhorta (mashed) vegetables and fish, bhaji (fried) vegetables, and Patla Daal (lentil soup). One thing to say about our traditional cuisine is that it is not only wonderful but also nutritious. Whether it's the fish, the way rice is customarily cooked, the myriad vegetable dishes on the Bengali menu, or the proteins from lentil soup or meat, the food of this land is unquestionably nourishing."
+  },
+  {
+    "title": "Egg Mamlate",
+    "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "price": "20.00",
+    "description": "Bangladeshi cuisine at its finest. White rice is the staple food in Bangladesh. It is served with a variety of fish and meat curries, bhaji (fried) vegetables, and patla daal. Bhorta (mash) is frequently served (lentil soup). Our traditional food is not only delicious but also nutritious, which is a win-win situation. There is no doubt that the food in this region is extremely nutrient-dense, whether it is fish, traditional rice preparation, the variety of vegetable dishes on the Bengali menu, or the proteins found in lentil soup or meat."
+  }
+]
