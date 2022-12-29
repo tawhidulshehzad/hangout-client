@@ -45,9 +45,9 @@ const Header = () => {
       </Link>
       <Link
         className=" fw-semibold ms-3 text-decoration-none text-dark"
-        to="/blog"
+        to="/allservices"
       >
-        Blog
+        Media
       </Link>
       {user?.email ? (
         <>

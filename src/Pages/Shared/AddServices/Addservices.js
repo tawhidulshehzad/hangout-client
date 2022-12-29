@@ -37,7 +37,7 @@ const Addservices = () => {
         if (data.acknowledged) {
           form.reset();
 
-          toast("Data added successfully");
+          toast.success("done");
         }
       })
       .catch((error) => console.error(error));

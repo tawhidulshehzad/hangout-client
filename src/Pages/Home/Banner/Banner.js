@@ -1,51 +1,97 @@
-import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
-import React from "react";
+import { MDBTextArea } from "mdb-react-ui-kit";
+import React, { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
-const Banner = () => {
+const Addservices = () => {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  useTitle("Add services");
+
+  const handleNewServices = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const img = form.img.value;
+    const description = form.description.value;
+    const like = 0;
+    const newService = {
+      img,
+      description,
+      time: Date(),
+      like,
+    };
+    fetch("http://localhost:5000/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newService),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          form.reset();
+
+          toast.success("Post done");
+        }
+      })
+      .catch((error) => console.error(error));
+  };
+  const handleToast = () => {
+    toast.warn("Login First");
+  };
   return (
-    <div className="d-lg-flex py-5 ">
-      <div className="col-lg-3 col-sm-12 px-2">
-        <h2 className="">Best Home made food In Town</h2>
-        <p className="p-2">
-          You will be able to choose your favorite items, with best price . Hope
-          to see you soon
-        </p>
-      </div>
-      <div className="col-lg-9">
-        <MDBCarousel showIndicators showControls fade>
-          <MDBCarouselItem
-            className="w-100 d-block"
-            itemId={1}
-            src="https://cdn.pixabay.com/photo/2017/01/30/13/49/pancakes-2020863__340.jpg"
-            alt="..."
-          >
-            <h5>Basic Items</h5>
-            <p>Economic services</p>
-          </MDBCarouselItem>
+    <div className="d-flex justify-content-center">
+      <div className="p-3 my-3 w-75 shadow-3">
+        <p> What's On Your Mind</p>
+        <form onSubmit={handleNewServices}>
+          <MDBTextArea
+            name="description"
+            type="text"
+            placeholder="Your text"
+            className="w-100 my-3  text-center"
+            label="Description"
+            id="textAreaExample"
+            rows={2}
+          />
+          <input
+            name="img"
+            type="text"
+            placeholder="Photo URL"
+            className="w-100 p-2 mb-2 "
+          />
+          {/* btn */}
 
-          <MDBCarouselItem
-            className="w-100 d-block"
-            itemId={2}
-            src="https://cdn.pixabay.com/photo/2014/06/11/17/00/food-366875__340.jpg"
-            alt="..."
-          >
-            <h5>Advanced Services</h5>
-            <p>You will be glad to know</p>
-          </MDBCarouselItem>
-
-          <MDBCarouselItem
-            className="w-100 d-block"
-            itemId={3}
-            src="https://cdn.pixabay.com/photo/2017/08/30/17/12/waffle-hearts-2697904__340.jpg"
-            alt="..."
-          >
-            <h5>Premium service</h5>
-            <p>Best in town</p>
-          </MDBCarouselItem>
-        </MDBCarousel>
+          {user?.email ? (
+            <div>
+              <input
+                className="btn btn-sm btn-primary"
+                type="submit"
+                value="Post"
+              />
+            </div>
+          ) : (
+            <div>
+              <Link
+                to="/login"
+                onClick={handleToast}
+                state={{ from: location }}
+                replace
+                className="btn btn-sm btn-primary"
+              >
+                Post
+              </Link>
+            </div>
+          )}
+        </form>
       </div>
     </div>
   );
 };
 
-export default Banner;
+export default Addservices;

@@ -21,7 +21,7 @@ const ReviewUpdate = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          toast("success");
+          toast.success("success");
           navigate(`/servicedetails/${review.service}`)
         }
       })

@@ -43,7 +43,7 @@ const ReviewsSpc = ({ id }) => {
             alert("Deleted successfully");
             const remaining = reviews.filter((rvw) => rvw._id !== id);
             setReviews(remaining);
-            toast("Successfully deleted");
+            toast.success("Successfully deleted");
           }
         });
     }
@@ -73,16 +73,14 @@ const ReviewsSpc = ({ id }) => {
 
   return (
     <div>
-      <h2>Service Reviews</h2>
+      <h2>Comments</h2>
       <MDBTable align="middle">
         <MDBTableHead>
           <tr>
             <th scope="col">Name</th>
-            <th scope="col">Review</th>
-            <th scope="col">Service Name</th>
-            <th scope="col">Price</th>
+            <th scope="col">Comment</th>       
             <th scope="col">Delete</th>
-            <th scope="col">Edit</th>
+            
           </tr>
         </MDBTableHead>
         <MDBTableBody>
