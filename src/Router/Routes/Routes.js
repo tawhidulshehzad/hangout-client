@@ -21,10 +21,6 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/profilemodal",
-        element: <profileModal></profileModal>,
-      }
-      {
         path: "/blog",
         element: <Blog></Blog>,
       },
