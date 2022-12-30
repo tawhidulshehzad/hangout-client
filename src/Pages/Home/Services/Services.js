@@ -4,9 +4,9 @@ import ServiceCard from "../../Shared/ServiceCard/ServiceCard";
 
 const Services = () => {
   const [services, setServices] = useState([]);
-  
+
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("http://localhost:5000/posts")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -14,11 +14,7 @@ const Services = () => {
   return (
     <div className="text-center px-3">
       <div>
-        <p className="text-center fs-3 fw-bold">Our Delicious Foods </p>
-        <p>
-          Delivery deals are best here. Observe Postmates. Grubhub/Seamless.
-          ideal for simple payment.
-        </p>
+        <p className="text-center fs-3 fw-bold">Top Posts </p>
       </div>
       <div className="row">
         {services.map((service) => (
@@ -26,10 +22,9 @@ const Services = () => {
         ))}
       </div>
       <Link className="btn btn-primary my-3" to="/allservices">
-        See All Services
+        See All Posts
       </Link>
     </div>
-    
   );
 };
 

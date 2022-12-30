@@ -55,13 +55,13 @@ const Header = () => {
             className=" fw-semibold text-decoration-none text-dark ms-3"
             to="/reviews"
           >
-            Reviews
+            Message
           </Link>
           <Link
             className=" fw-semibold text-decoration-none text-dark ms-3"
             to="/addservices"
           >
-            Services
+            About Us
           </Link>
           <button
             onClick={handleLogOut}
@@ -87,8 +87,9 @@ const Header = () => {
         <Navbar.Brand href="#home">
           <Link to="/" className="text-decoration-none text-dark">
             <div className="d-flex">
-              <img style={{ width: "50px" }} src={logo1} alt="" />
-              <p className="d-flex align-items-center ps-2 mb-0">Cloud Food</p>
+              <p className="d-flex fw-bold align-items-center ps-2 mb-0">
+                Hangout
+              </p>
             </div>
           </Link>
         </Navbar.Brand>

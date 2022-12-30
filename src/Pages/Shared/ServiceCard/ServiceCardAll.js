@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "react-photo-view/dist/react-photo-view.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import useTitle from "../../../hooks/useTitle";
+
 import { MDBTextArea } from "mdb-react-ui-kit";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
@@ -13,14 +13,13 @@ import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const ServiceCard = ({ service }) => {
-  useTitle("service");
+  
   const { title, img, description, _id, like } = service;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const [newLike, setnewLike] = useState([]);
-
-  const istaking = true;
+  const [istaking, setistaking] = useState([]);
 
   const handleComment = (event) => {
     event.preventDefault();
@@ -56,13 +55,26 @@ const ServiceCard = ({ service }) => {
   };
 
   const handleLike = () => {
-    
+    setistaking(false);
     const plike = like;
     const originalLike = parseInt(plike);
     let sum;
     const asumedLike = 1;
     sum = asumedLike + originalLike;
     setnewLike(sum);
+
+    fetch(`http://localhost:5000/post/${_id}`, {
+      method: "PATCH",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ sum }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+        }
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -81,9 +93,15 @@ const ServiceCard = ({ service }) => {
                 <FontAwesomeIcon className="text-white p-0" icon={faThumbsUp} />
               </span>
             </h6>
-            <p className="text-secondary ps-1" style={{ marginTop: "-4px" }}>
-              <small>{like}</small>
-            </p>
+            {istaking ? (
+              <p className="text-secondary ps-1" style={{ marginTop: "-4px" }}>
+                <small>{like}</small>
+              </p>
+            ) : (
+              <p className="text-secondary ps-1" style={{ marginTop: "-4px" }}>
+                <small>{newLike}</small>
+              </p>
+            )}
           </Link>
         </button>
         <div className="px-3 ">

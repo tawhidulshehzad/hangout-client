@@ -9,15 +9,15 @@ import {
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import ReviewRow from "./ReviewRow";
 import { toast } from "react-toastify";
-import useTitle from "../../hooks/useTitle";
+
 
 const Reviews = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  useTitle("My Review");
+  
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+    fetch(`http://localhost:5000/revifgdfews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("food-token")}`,
       },
@@ -30,7 +30,7 @@ const Reviews = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete");
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`http://localhost:5000/revidgdfews/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
@@ -47,7 +47,7 @@ const Reviews = () => {
   };
 
   const handleStatusUpdate = (id) => {
-    fetch(`http://localhost:5000/reviews/${id}`, {
+    fetch(`http://localhost:5000/revisdfsdews/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -72,7 +72,7 @@ const Reviews = () => {
     <div>
       <h2>
         {reviews.length === 0 ? (
-          <p className="text-center my-5">No reviews were added</p>
+          <p className="text-center my-5">No Message were added</p>
         ) : (
           reviews.length + " Reviews added"
         )}
@@ -81,12 +81,7 @@ const Reviews = () => {
       <MDBTable align="middle">
         <MDBTableHead>
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Review</th>
-            <th scope="col">Service Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Delete</th>
-            <th scope="col">Edit</th>
+           
           </tr>
         </MDBTableHead>
         <MDBTableBody>

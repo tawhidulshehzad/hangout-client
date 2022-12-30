@@ -1,8 +1,8 @@
 import React from "react";
-import useTitle from "../../hooks/useTitle";
+
 
 const Blog = () => {
-  useTitle("Blog");
+  
   return (
     <div className="bg-light p-3 rounded">
       <h2>Difference between SQL and NoSQL</h2>

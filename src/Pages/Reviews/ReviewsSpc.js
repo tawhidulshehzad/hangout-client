@@ -2,14 +2,14 @@ import { MDBTableBody, MDBTableHead, MDBTable } from "mdb-react-ui-kit";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
-import useTitle from "../../hooks/useTitle";
+
 import ReviewRow from "./ReviewRow";
 
 const ReviewsSpc = ({ id }) => {
   console.log(id)
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  useTitle("Details");
+  
   
 
   useEffect(() => {

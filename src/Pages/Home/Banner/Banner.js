@@ -4,13 +4,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
-import useTitle from "../../../hooks/useTitle";
+
 
 const Addservices = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  useTitle("Add services");
+ 
 
   const handleNewServices = (event) => {
     event.preventDefault();

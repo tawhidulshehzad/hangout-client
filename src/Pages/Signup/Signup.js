@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link,  useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
-import useTitle from "../../hooks/useTitle";
 
 const Signup = () => {
-  useTitle("Sign Up");
   const { createUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -14,13 +12,16 @@ const Signup = () => {
   const handleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const university = form.university.value;
+    const address = form.address.value;
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        saveUser(name, email, university, address);
         fetch("http://localhost:5000/jwt", {
           method: "POST",
           headers: {
@@ -30,7 +31,6 @@ const Signup = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             // local storage not the best place to store jwt token
             localStorage.setItem("food-token", data.token);
             navigate(from, { replace: true });
@@ -38,6 +38,22 @@ const Signup = () => {
       })
       .catch((err) => console.error(err));
   };
+
+  const saveUser = (name, email, university, address) => {
+    const user = { name, email, address, university };
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("user created");
+      });
+  };
+
   return (
     <div>
       <Form
@@ -50,6 +66,24 @@ const Signup = () => {
             name="name"
             type="text"
             placeholder="Enter Name"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Your university</Form.Label>
+          <Form.Control
+            name="university"
+            type="text"
+            placeholder="Enter university"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Your Address</Form.Label>
+          <Form.Control
+            name="address"
+            type="text"
+            placeholder="Enter Address"
             required
           />
         </Form.Group>
